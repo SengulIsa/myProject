@@ -9,11 +9,14 @@ import { RouterOutlet } from '@angular/router';
 // import { DirectivesComp } from './directives-comp/directives-comp';
 // import { DashbordComp } from './dashbord-comp/dashbord-comp';
 // import { TypeCheckingComp } from './type-checking-comp/type-checking-comp';
-import { TaskListComp } from './task-list-comp/task-list-comp';
+// import { TaskListComp } from './task-list-comp/task-list-comp';
+// import { TypeChecking2Comp } from './type-checking2-comp/type-checking2-comp';
+// import { InterfaceClassComp } from './interface-class-comp/interface-class-comp';
+import { FormValidationComp } from './form-validation-comp/form-validation-comp';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,TaskListComp],
+  imports: [RouterOutlet,FormValidationComp],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

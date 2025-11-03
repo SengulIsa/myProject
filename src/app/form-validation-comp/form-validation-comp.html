@@ -1,0 +1,35 @@
+<h3>Form Validation Çalışması</h3>
+
+<form #myForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+   <label>Name :</label>
+   <input name="name" [(ngModel)]="myValues.name" required minlength="3" #name="ngModel" type="text"/>
+   <!-- <div *ngIf="name.invalid && (name.dirty || name.touched || submitted)" >
+    <small *ngIf="name.errors && name.errors['required']" >İsim alanı boş olamaz</small>   deprecated
+    <small *ngIf="name.errors && name.errors['minlength']" >Email alanı en az 3 uzunluğunda olmalıdır.</small>
+   </div> -->
+   @if(name.invalid && (name.dirty || name.touched || submitted)){
+    <div>
+        @if(name.errors && name.errors['required']){
+            <small>İsim alanı boş olamaz</small>
+        }
+        @if(name.errors && name.errors['minlength']){
+            <small>isim alanı en az 3 uzunluğunda olmalıdır.</small>
+        }
+
+    </div>
+   }
+   <label>Email :</label>
+   <input name="email" [(ngModel)]="myValues.email" email required  #email="ngModel" />
+
+   @if(email.invalid && (email.dirty || email.touched || submitted)){
+    <div style="color: red;">
+        @if(email.errors && email.errors['required']){
+            <small>Email alanı boş olamaz</small>
+        }
+        @if(email.errors && email.errors['email']){
+            <small>Girilen değer email formatında olmalı</small>
+        }
+    </div>
+   }
+
+</form>
