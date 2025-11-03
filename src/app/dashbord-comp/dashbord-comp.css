@@ -1,0 +1,14 @@
+.container {
+    text-align: center;
+}
+p{
+    font-size: larger;
+}
+ul{
+    font-size: x-large;
+    font-weight: bold;
+}
+li{
+    margin-top: 5px;
+    font-size: larger;
+}

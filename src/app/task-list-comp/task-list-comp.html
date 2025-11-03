@@ -1,0 +1,15 @@
+<h3>Görev listesi</h3>
+
+<div>
+    <table>
+        @for (task of tasks; let i =$index; track task){
+           <tr>
+            <td>{{task.title}}</td>
+            <td>({{task.status}})</td>
+            <td><button (click)="changeStatus(task)">Statü Değiştir</button></td>
+           </tr>
+        }@empty{
+            <p>Liste boştur</p>
+        }
+    </table>
+</div>

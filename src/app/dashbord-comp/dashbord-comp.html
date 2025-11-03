@@ -1,0 +1,23 @@
+<div class="container">
+<h1>Angular Dashbord Örneği</h1>
+
+<input type="button" value="Anasayfa" (click)="showContent('anasayfa')">
+<input type="button" value="Ürünler" (click)="showContent('urunler')">
+<input type="button" value="Hakkında" (click)="showContent('hakkında')">
+<hr>
+
+@if(activeButton == 'anasayfa'){
+    <h2>Hoşgeldiniz !</h2>
+    <p>Bu örnek,Angular'ın yeni kontrol sayfasını göstermektedir.</p>
+}
+@else if(activeButton == 'urunler'){
+    <ul>Ürün Listesi</ul>
+    @for(product of myProducts;let i =$index; track product.id){
+        <li><b>{{product.name}}</b>--- {{product.price}}</li>
+    }
+}
+@else {
+    <h2>Hakkında</h2>
+    <p>Bu basit dashbord, structural directives yapılarını öğretmek için hazırlanmıştır.</p>
+}
+</div>

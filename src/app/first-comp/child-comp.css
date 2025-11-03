@@ -1,0 +1,15 @@
+ .card {
+      border : 2px solid white;
+      border-radius : 8px;
+      padding : 12px;
+      max-width : 360px ;
+      margin: 10px;
+ }
+ .card-header {
+    background-color: rgb(49, 46, 46);
+    color: white;
+
+ }
+ .card-body{
+  color: rgb(75, 67, 67);
+ }

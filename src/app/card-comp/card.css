@@ -1,0 +1,33 @@
+.main{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    gap: 10;
+    z-index: 2;
+    margin-top:90px
+
+}
+.card1{
+    position: relative;
+    width: 400px;
+    height: 65vh;
+    border: 1px solid white;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+button{
+    border: 1px solid greenyellow;
+    background-color: greenyellow;
+    border-radius: 5px;
+    height: 40px;
+    color: white;
+    opacity: 0.4;
+}
+button:hover{
+    opacity: 1;
+}

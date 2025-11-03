@@ -1,0 +1,9 @@
+<input type="text" placeholder="Adını yaz..." [disabled]="isDisabled" (input)="nameChanged($event)" />
+
+<p>İsim olarak girdiğiniz değer : {{ myName }}</p>
+
+<label>Soyadınız :</label>
+<input type="text" placeholder="Soyadını gir..." [(ngModel)]="surname" />
+<p>Soyisim olarak girdiğiniz değer : {{surname}}</p>
+<input type="text" placeholder="Soyadını gir..." [(ngModel)]="surname" />
+

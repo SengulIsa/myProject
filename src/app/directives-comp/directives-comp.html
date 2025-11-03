@@ -1,0 +1,34 @@
+<!-- <p *ngIf="myItems.length >0; then ifContent else elseContent">My items lenngth : {{myItems.length}}</p>
+
+<ng-template #ifContent>My items lenngth : {{myItems.length}}</ng-template>   angular 17 den sonra modası geçti kullanılmıyor
+<ng-template #elseContent>I have no items</ng-template>     -->
+<br>
+@if (myItems.length >0){
+    <p >My items lenngth : {{myItems.length}}</p>
+} @else {
+    <p>I have no items</p>
+}
+
+<h3>ngFor ile yazdırılmış liste</h3>
+
+<ul>
+    <li *ngFor ="let item of myItems">{{item}}</li>
+</ul>
+
+<h3>for ile yazdırılmış liste</h3>
+
+@for (item of myItems; let i =$index; track item){
+    <li>{{i + 1 }}.{{item}}</li>
+}@empty{
+    <p>Liste boştur</p>
+}
+<br>
+<label >İndex girin :</label>
+<input type="number" [(ngModel)]="myIndex"/>
+
+@switch (myIndex){
+    @case (0) { {{myItems[0]}} }
+    @case (1) { {{myItems[1]}} }
+    @case (2) { {{myItems[2]}} }
+    @default {  alert("Bu indexte eleman yok") }
+}

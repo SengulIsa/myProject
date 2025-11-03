@@ -1,0 +1,12 @@
+<div class="container">
+<h1 [style.fontSize.px]="isNgModel ? fontSizeNgModel : fontSize">Dinamik Font Boyutu Örneği</h1>
+ <h2 [style.fontSize.px]="isNgModel ? fontSizeNgModel : fontSize">Font Boyu :  {{ isNgModel ? fontSizeNgModel : fontSize }}</h2>
+<hr>
+<p>Manual Input(onInput Event)<input type="range" min="10" max="80"  (input)="onInput($event)" /></p>
+<p>Range'den verilen değer : {{ fontSize }}</p>
+
+<hr>
+<p>Two Way binding(ngmodel)<input type="number"   [(ngModel)]="fontSizeNgModel" (focus)="isNgModel = true"/></p>
+<p>ngmodel ile bağlanan font boyu : {{fontSizeNgModel}}</p>
+</div>
+
