@@ -1,0 +1,58 @@
+<h3>Ürün Fiyat Hesaplama</h3>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+<label >Ürün adı :</label>
+<input type="text" formControlName="urunAd" placeholder="Ürün adını yazınız..." />
+<br>
+<label style="margin-right: 25px;" >Adet :</label>
+<input type="number" formControlName="urunAdet" placeholder="Ürün adetini giriniz..." [(ngModel)]="adet" />
+
+@if(form.controls.urunAd.invalid && (form.controls.urunAd.dirty || form.controls.urunAd.touched || submitted)){
+    <div style="color: red;">
+        @if(form.controls.urunAd.errors && form.controls.urunAd.errors['required']){
+            <p>Ürün adı boş olamaz !...</p>
+        }
+    </div>
+}
+
+@if(form.controls.urunAdet.invalid && (form.controls.urunAdet.dirty || form.controls.urunAdet.touched || submitted)){
+    <div style="color: red;">
+        @if(form.controls.urunAdet.errors && form.controls.urunAdet.errors['required']){
+            <p>Ürün adeti boş olamaz !...</p>
+        }
+        @if(form.controls.urunAdet.errors && form.controls.urunAdet.errors['min']){
+            <p>Ürün adeti sıfırdan büyük olmalı</p>
+        }
+    </div>
+}
+<br>
+<label style="margin-right: 25px;" >Birim Fiyat :</label>
+<input type="number" formControlName="birimFiyat" [(ngModel)]="birim"  />
+@if(form.controls.birimFiyat.invalid && (form.controls.birimFiyat.dirty || form.controls.birimFiyat.touched || submitted)){
+    <div style="color: red;">
+        @if(form.controls.birimFiyat.errors && form.controls.birimFiyat.errors['required']){
+            <p>Birim fiyatı boş olamaz !...</p>
+        }
+        @if(form.controls.birimFiyat.errors && form.controls.birimFiyat.errors['min']){
+            <p>Birim fiyatı sıfırdan büyük olmalı</p>
+        }
+    </div>
+}
+<br>
+<label style="margin-right: 25px;" >İndirim(%) :</label>
+<input type="number" formControlName="indirim" [(ngModel)]="indirimDegeri" />
+
+    @if(form.controls.indirim.invalid && (form.controls.indirim.dirty || form.controls.indirim.touched || submitted)){
+        <div style="color: red;">
+            @if(form.controls.indirim.errors && (form.controls.indirim.errors['min'] || form.controls.indirim.errors['max'])){
+                <p>İndirim 0-80 aralığında olmalıdır.</p>
+            }
+        </div>
+    }
+<br>
+    <p><b>Toplam :</b><span style="color: green;">{{calculate()}}</span></p>
+    <p>{{form.status}}</p>
+<br>
+
+<button type="submit" [disabled]="form.invalid">Gönder</button>
+</form>
+

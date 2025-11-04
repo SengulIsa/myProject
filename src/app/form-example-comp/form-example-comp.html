@@ -1,0 +1,121 @@
+<h2>Üyelik formu</h2>
+
+<form #myForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+  <label>Ad Soyad :</label>
+  <input name="name" [(ngModel)]="myValues.name" required #name="ngModel" type="text" />
+
+  @if(name.invalid && (name.dirty || name.touched || submitted)){
+  <div style="color: red">
+    @if(name.errors && name.errors['required']){
+    <small>İsim alanı boş olamaz</small>
+    }
+  </div>
+  }
+  <br />
+  <label>Email :</label>
+  <input name="email" [(ngModel)]="myValues.email" email required #email="ngModel" />
+
+  @if(email.invalid && (email.dirty || email.touched || submitted)){
+  <div style="color: red">
+    @if(email.errors && email.errors['required']){
+    <small>Email alanı boş olamaz</small>
+    } @if(email.errors && email.errors['email']){
+    <small>Girilen değer email formatında olmalı</small>
+    }
+  </div>
+  }
+  <br />
+  <label>Şifre :</label>
+  <input
+    type="password"
+    name="password"
+    [(ngModel)]="myValues.password"
+    minlength="6"
+    required
+    #password="ngModel"
+  />
+
+  @if(password.invalid && (password.dirty || password.touched || submitted)){
+  <div style="color: red">
+    @if(password.errors && password.errors['required']){
+    <small>Şifre alanı boş olamaz</small>
+    } @if(password.errors && password.errors['minlength']){
+    <small>Şifre en az 6 karakterli olmalı</small>
+    }
+  </div>
+  }
+  <br />
+  <label>Şifre Tekrar :</label>
+  <input
+    type="password"
+    name="repassword"
+    [(ngModel)]="myValues.repassword"
+    required
+    #repassword="ngModel"
+  />
+  @if(repassword.invalid && (repassword.dirty || repassword.touched || submitted)){
+  <div style="color: red">
+    @if(repassword.errors && repassword.errors['required']){
+    <small>Şifre alanı boş olamaz</small>
+    }
+  </div>
+  } @else if(myValues.repassword != myValues.password){
+  <div style="color: red">
+    <small>Şifreler uyşmuyor !!</small>
+  </div>
+  }
+  <br />
+  <label>Cinsiyet :</label>
+  <input
+    type="radio"
+    name="gender"
+    [(ngModel)]="myValues.gender"
+    value="erkek"
+    required
+    #gender="ngModel"
+  />Erkek
+  <input
+    type="radio"
+    name="gender"
+    [(ngModel)]="myValues.gender"
+    value="kadın"
+    required
+    #gender="ngModel"
+  />Kadın @if(gender.invalid && (gender.dirty || gender.touched || submitted)){
+  <div style="color: red">
+    @if(gender.errors && gender.errors['required']){
+    <small>Cinsiyet seçilmeli</small>
+    }
+  </div>
+  }
+  <br />
+  <label>İl :</label>
+  <select name="city" [(ngModel)]="myValues.selected" #city="ngModel" required>
+    <option>--seçiniz--</option>
+    <option>İstanbul</option>
+    <option>Ankara</option>
+    <option>İzmir</option>
+  </select>
+  @if(city.invalid && (city.dirty || city.touched || submitted)){
+  <div style="color: red">
+    @if(city.errors && city.errors['required']){
+    <small>şehir seçmelisiniz </small>
+    }
+  </div>
+  }
+  <br />
+  <input type="checkbox" name="kvkk" [(ngModel)]="myValues.approve" required #approve="ngModel" />
+  <span>Kvkk metnini okudum, onaylıyorum</span>
+
+  @if(approve.invalid && (approve.dirty || approve.touched || submitted)){
+  <div style="color: red">
+    @if(approve.errors && approve.errors['required']){
+    <small>Kvkk metni okundu işaretlenmeli </small>
+    }
+  </div>
+  }
+  <br />
+  <button>Gönder</button>
+
+  <hr />
+</form>

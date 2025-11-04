@@ -12,11 +12,14 @@ import { RouterOutlet } from '@angular/router';
 // import { TaskListComp } from './task-list-comp/task-list-comp';
 // import { TypeChecking2Comp } from './type-checking2-comp/type-checking2-comp';
 // import { InterfaceClassComp } from './interface-class-comp/interface-class-comp';
-import { FormValidationComp } from './form-validation-comp/form-validation-comp';
+// import { FormValidationComp } from './form-validation-comp/form-validation-comp';
+// import { FormExampleComp } from './form-example-comp/form-example-comp';
+// import { ReactiveFormComp } from './reactive-form-comp/reactive-form-comp';
+import { ProductFormComp } from './product-form-comp/product-form-comp';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,FormValidationComp],
+  imports: [RouterOutlet,ProductFormComp],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

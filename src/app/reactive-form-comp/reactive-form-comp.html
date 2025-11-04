@@ -1,0 +1,50 @@
+<h3>Reactive forms</h3>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label>Ad :</label>
+    <input formControlName="name" placeholder="İsminizi yazınız..." />
+
+    @if(form.controls.name.invalid && (form.controls.name.dirty || form.controls.name.touched || submitted)){
+        <div style="color: red;">
+            @if(form.controls.name.errors && form.controls.name.errors['required']){
+                <p>İsim boş olamaz !...</p>
+            }
+            @if(form.controls.name.errors && form.controls.name.errors['minlength']){
+                <p>isim uzunluğu en az 3 karakter olmalıdır !...</p>
+            }
+        </div>
+    }
+    <br>
+    <label>E-Posta :</label>
+    <input formControlName="email" placeholder="Emailinizi giriniz..." email required/>
+
+    @if(form.controls.email.invalid && (form.controls.email.dirty || form.controls.email.touched || submitted)){
+        <div style="color: red;">
+            @if(form.controls.email.errors && form.controls.email.errors['required']){
+                <p>Email alanı boş olamaz !...</p>
+            }
+            @if(form.controls.email.errors && form.controls.email.errors['email']){
+                <p>girilen değer email formatında olmalıdır !...</p>
+            }
+        </div>
+    }
+    <br>
+    <input type="checkbox" formControlName="kvkk" />
+    <label>KVKK Onayı</label>
+
+    @if((form.controls.kvkk.invalid ||(!form.value['kvkk'])) && (form.controls.kvkk.dirty || form.controls.kvkk.touched || submitted)){
+        <div style="color: red;">
+            @if((!form.value['kvkk']) || (form.controls.kvkk.errors && form.controls.kvkk.errors['required'])){
+                <p> kvkk okundu işaretlenmeli !...</p>
+            }
+           
+        </div>
+    }
+<br>
+    <button type="submit" [disabled]="form.invalid || !(form.value['kvkk'])">Gönder</button>
+</form>
+
+
+<p>Form statüsü :{{form.status}}</p>
+<p>Form içinden değerler : {{form.value | json }}</p>
+<p>Form Gönderildi mi ? :{{submitted}}</p>
