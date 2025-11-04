@@ -1,0 +1,14 @@
+<p>Hesaplar</p>
+<ul>
+    @for(account of accounts; track account.accountNumber){
+        <li>
+            Hesap No : {{account.accountNumber}}
+            isim : {{account.name}}
+            Bakiye :{{account.balance}}
+            Şube No : {{account.branchCode}}
+
+        </li>
+    }
+
+</ul>
+
