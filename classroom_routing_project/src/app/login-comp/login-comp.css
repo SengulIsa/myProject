@@ -1,0 +1,10 @@
+.like-btn{
+    width: 180px;
+    height: 30px;
+    background-color: red;
+    color: white;
+}
+.like-div{
+   margin-left: 200px;
+    border: none;
+}

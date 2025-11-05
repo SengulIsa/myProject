@@ -1,8 +1,10 @@
 import { Routes } from '@angular/router';
-import { AccountComp } from './account-comp/account-comp';
 import { HomeComp } from './home-comp/home-comp';
+import { ProductComp } from './product-comp/product-comp';
+import { AboutComp } from './about-comp/about-comp';
 
 export const routes: Routes = [
     {path : '', component : HomeComp},
-    {path : 'accounts', component : AccountComp}
+    {path : 'products', component : ProductComp},
+    {path : 'about', component : AboutComp}
 ];

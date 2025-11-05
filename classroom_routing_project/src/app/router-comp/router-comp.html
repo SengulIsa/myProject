@@ -1,8 +1,13 @@
 <nav>
-    <a routerLink='/'>Anasayfa</a> | 
-    <a routerLink='/accounts'>Hesaplar</a>
+    <a routerLink='/' routerLinkActive="active" [routerLinkActiveOptions]="{ exact : true}" >Anasayfa</a> | 
+    <a routerLink='/products' routerLinkActive="active" [routerLinkActiveOptions]="{ exact : true}">Ürünler</a> | 
+    <a routerLink='/about' routerLinkActive="active" [routerLinkActiveOptions]="{ exact : true}">Hakkında</a>
 </nav>
 
 <div class="router-div">
     <router-outlet></router-outlet>
+</div>
+
+<div class="login-div">
+   <login-comp></login-comp>
 </div>

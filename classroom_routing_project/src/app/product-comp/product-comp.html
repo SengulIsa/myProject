@@ -1,0 +1,9 @@
+<ul>
+    @for(product of products; track product.productCode){
+        <li>
+             {{product.productCode}}:{{product.productName}}
+            <button>Detay</button>
+        </li>
+        <br>
+    }
+</ul>
