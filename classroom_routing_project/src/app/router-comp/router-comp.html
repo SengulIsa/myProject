@@ -1,13 +1,28 @@
-<nav>
-    <a routerLink='/' routerLinkActive="active" [routerLinkActiveOptions]="{ exact : true}" >Anasayfa</a> | 
-    <a routerLink='/products' routerLinkActive="active" [routerLinkActiveOptions]="{ exact : true}">Ürünler</a> | 
-    <a routerLink='/about' routerLinkActive="active" [routerLinkActiveOptions]="{ exact : true}">Hakkında</a>
-</nav>
+ <nav>
+   <button><a   routerLink='/' routerLinkActive="active" [routerLinkActiveOptions]="{ exact : true}" >Anasayfa</a></button> 
+   <button><a routerLink='/products' routerLinkActive="active" [routerLinkActiveOptions]="{ exact : true}">Ürünler</a></button>  
+     <!-- <a routerLink='/products/-1' routerLinkActive="active" [routerLinkActiveOptions]="{ exact : true}">Ürün</a> |  -->
+     <button><a routerLink='/about' routerLinkActive="active" [routerLinkActiveOptions]="{ exact : true}">Hakkında</a></button> 
+</nav> 
 
 <div class="router-div">
     <router-outlet></router-outlet>
-</div>
+</div> 
+    <div class="login-div">
+        <login-comp  ></login-comp>
+     </div>
+     
+     <div class="cart-div">
+         <card-comp></card-comp>
+     </div>
 
-<div class="login-div">
-   <login-comp></login-comp>
-</div>
+
+     <!-- <p>Genelr servisle alınıp biri değiştiinde tüm projede verinin değişme yapısı serviste @injectable(providedIn='app')</p>
+     <app-counter-client1></app-counter-client1>
+     <app-counter-client2></app-counter-client2>
+     <br><br><br>
+     <hr>
+     <p>Local servisle alınıp biri değiştiinde diğer componentlarda verinin değişmeme yapısı @injectable()</p>
+     <app-local-client-comp1></app-local-client-comp1>
+     <app-local-client-comp2></app-local-client-comp2> -->
+

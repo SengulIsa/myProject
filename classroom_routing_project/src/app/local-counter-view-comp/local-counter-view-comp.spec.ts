@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LoginComp } from './login-comp';
+import { LocalCounterViewComp } from './local-counter-view-comp';
 
-describe('LoginComp', () => {
-  let component: LoginComp;
-  let fixture: ComponentFixture<LoginComp>;
+describe('LocalCounterViewComp', () => {
+  let component: LocalCounterViewComp;
+  let fixture: ComponentFixture<LocalCounterViewComp>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LoginComp]
+      imports: [LocalCounterViewComp]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(LoginComp);
+    fixture = TestBed.createComponent(LocalCounterViewComp);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

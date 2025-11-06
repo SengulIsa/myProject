@@ -1,0 +1,17 @@
+<h3>Sepet</h3>
+<div class="container">
+    <div class="cart">
+        <div class="cart-list">
+            <ul>
+                <li *ngFor ="let item of items">{{item.productName}} | {{item.price}} <hr></li>
+                
+            </ul>
+        </div>
+        <div class="total-price">
+            <b>Toplam Fiyat :</b>{{totalPrice}} TL
+        </div>
+    </div>
+    <app-like-count-view-comp></app-like-count-view-comp>
+</div>
+
+

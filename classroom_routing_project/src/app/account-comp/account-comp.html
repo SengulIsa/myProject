@@ -1,14 +1,24 @@
-<p>Hesaplar</p>
-<ul>
-    @for(account of accounts; track account.accountNumber){
-        <li>
-            Hesap No : {{account.accountNumber}} | 
-            isim : {{account.name}} | 
-            Bakiye :{{account.balance}} | 
-            Şube No : {{account.branchCode}}
+@if(account == -1){
+    <p>Hesaplar</p>
+    <ul>
+        @for(account of accounts; track account.accountNumber){
+            <li>
+                Hesap No : {{account.accountNumber}} | 
+                isim : {{account.name}} | 
+                Bakiye :{{account.balance}} | 
+                Şube No : {{account.branchCode}}
+                <button [routerLink]="['/accounts',account.accountNumber]" >Detay</button>
+            </li>
+        }
+    
+    </ul>
+    
+}
+@else{
+    <h3>{{account}} numaralı hesap</h3>
+    <p>{{selectedAccount.accountNumber}}</p>
+    <p>İsim : {{selectedAccount.name}}</p>
+    <p>Bakiye :{{selectedAccount.balance}}</p>
+    <p>Şube No :{{selectedAccount.branchCode}}</p>
 
-        </li>
-    }
-
-</ul>
-
+}

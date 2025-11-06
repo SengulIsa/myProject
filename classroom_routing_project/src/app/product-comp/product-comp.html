@@ -1,9 +1,21 @@
+@if(product == -1){
 <ul>
     @for(product of products; track product.productCode){
         <li>
              {{product.productCode}}:{{product.productName}}
-            <button>Detay</button>
+            <button [routerLink]="['/products',product.productCode]" class="detay-btn"   >Detay</button>
+            <button class="add-cart" (click)="addToCart(product)">Sepete Ekle</button>
         </li>
         <br>
     }
 </ul>
+}
+@else{
+    <h3>{{product}} numaralı ürün</h3>
+    <p> Ürün Adı : {{selectedProduct.productName}}</p>
+    <p>Ürün Fİyatı :{{selectedProduct.price}} TL</p>
+    <p>{{selectedProduct.amount}} adet ürün vardır</p>
+
+    <button [routerLink]="['/products']" class="geri-btn" >Ürünler sayfasına dön</button>
+
+}

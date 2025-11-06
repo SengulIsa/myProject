@@ -1,0 +1,10 @@
+.cart-list{
+    display: flex;
+    overflow-y: scroll;
+}
+.cart{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    ;
+}

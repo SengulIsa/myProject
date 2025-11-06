@@ -5,9 +5,8 @@
 <input type="password" placeholder="Şifre...">
 <br>
 <br>
-<button (click)="clickButton()">{{buttonValue}}</button>
+<button  (click)="clickButton()">{{buttonValue}}</button>
 <br>
 <div class="like-div">
-<button class="like-btn">Bu sayfayı beğen</button>
-<p>bu sayfa 0 kez beğenildi</p>
+    <app-like-count-view-comp></app-like-count-view-comp>
 </div>
