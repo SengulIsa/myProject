@@ -1,0 +1,10 @@
+<h3>Async pipe Uygulaması</h3>
+
+@let state = (status$ | async);  <!--state değikeni statusun sürekli değerini alır bu şekilde stremaing-->
+
+@if(state?.status?.startsWith("Yükleniyor")){
+    <div> {{state?.status}} </div>
+}
+@else if(state?.status =='Okey'){
+    <div>{{state?.data}}</div>
+}

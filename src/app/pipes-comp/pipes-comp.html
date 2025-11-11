@@ -1,0 +1,52 @@
+<h3>Date pipe</h3>
+
+<p>{{today | date:'fullDate'}}</p>
+<p>{{today | date:'dd/MM/yyyy'}}</p>
+<hr>
+
+
+<h3>UpperCase |</h3>
+
+<p>UPPERCASE :{{text | uppercase }}</p>
+ <p>lowercase:{{text | lowercase }}</p>   <!--  pipe lar kaynak veriyi değiştirmez -->
+<p>TitleCase :{{text | titlecase }}</p>
+
+<hr>
+
+<h3>Currency</h3>
+
+ <p>Curency : {{num | currency}}</p>  <!-- dolar bazında gösterir(default) -->
+<p>Curency : {{num | currency:'EUR' : 'symbol':'1.1-1'}}</p> <!-- euro bazıda gösterir(currency:'eur')-->
+<hr>
+
+<h3>Percent :</h3>
+<p>{{ 0.39536 | percent }}</p>
+<p>{{0.39536 | percent:'1.0-0'}}</p>  <!--Yüzdelik yazım virgülden öncesi normal sonrası 0-0 iile görünmeyecek-->
+<p>{{0.39536 | percent:'1.1-2'}}</p>  <!--Yüzdelik yazım virgülden öncesi normal sonrası 0-0 iile görünmeyecek-->
+<hr>
+
+<h3>Slice</h3>
+
+<p>{{'Angular' | slice :1:4}}</p>  <!--ilk eğer başlangıç son değer bitiş, arasını yazdırır (ngu)-->
+<p>{{[1,2,3,4,5,6,7,8,9] | slice:3:5}}</p>
+
+<hr>
+
+<h3>Json pipe</h3>
+
+<p>{{product | json }}</p>
+<hr>
+
+<h3>Keyvalue</h3>
+@for(product1 of products ; track product1.id){
+    <p>-------------------------------</p>
+    @for(item of product1 | keyvalue; track item.key){
+        <div>
+            {{item.key}}: {{item.value}}
+        </div>
+    }
+}
+<hr>
+<h3>Custom Pipe</h3>
+
+<p>Value : {{text | mypipeoverstrings}}</p>

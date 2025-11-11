@@ -1,0 +1,10 @@
+<p>signal-comp works!</p>
+<p>x = {{x()}}</p>
+<p><button (click)="changeX()">Göster</button></p>
+@for(item of x(); track  item){
+    <p>{{item}}</p>
+}
+<br>
+<p>a:{{a()}} + b:{{b()}} = sum: {{sum()}}</p>
+<button (click)="incrementA()">a+</button>
+<button (click)="incrementB()">b+</button>

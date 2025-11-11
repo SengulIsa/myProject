@@ -15,11 +15,14 @@ import { RouterOutlet } from '@angular/router';
 // import { FormValidationComp } from './form-validation-comp/form-validation-comp';
 // import { FormExampleComp } from './form-example-comp/form-example-comp';
 // import { ReactiveFormComp } from './reactive-form-comp/reactive-form-comp';
-import { ProductFormComp } from './product-form-comp/product-form-comp';
+// import { ProductFormComp } from './product-form-comp/product-form-comp';
+// import { SignalComp } from './signal-comp/signal-comp';
+import { PipesComp } from './pipes-comp/pipes-comp';
+// import { AsyncPipeComp } from './async-pipe-comp/async-pipe-comp';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,ProductFormComp],
+  imports: [RouterOutlet,PipesComp],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
