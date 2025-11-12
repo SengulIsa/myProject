@@ -1,0 +1,22 @@
+<div class="products">
+    <h2>Ürünler</h2>
+    <div class="product">
+        <ul>
+            @for(product of products; track product.id){
+            <li>
+                <p> Name:{{product.name}} </p>
+                <p>Price:{{product.price}}</p>
+                <button (click)="editProduct(product)">Düzenle</button>
+            </li>
+            }
+        </ul>
+    </div>
+
+</div>
+
+
+@if(selectedProduct){
+    <hr>
+<product-child-comp [product]="selectedProduct" (saved)="saveProduct($event)" (canceled)="cancelProduct()" />
+
+}

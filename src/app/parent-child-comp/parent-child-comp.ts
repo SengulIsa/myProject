@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   template: 
   `
   <p> Merhaba {{name}} bugün nasılsın ? </p>
-  ` ,
+  `
 })
 export class ChildComp {
   @Input() name = "";

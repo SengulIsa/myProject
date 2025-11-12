@@ -1,0 +1,15 @@
+<h2>Yapılacaklar Listesi</h2>
+<ul>
+    @for(task of tasks; track task.id){
+        <li>
+            {{task.title}}
+            <button (click)="editTask(task)">Düzenle</button>
+        </li>
+    }
+</ul>
+
+@if(selectedTask){
+    <!--Buraya child component gelecek saved ve canceleed bizim eventemitter ile oluşturduğumuz eventler click gibi-->
+    <tasklist-child-comp [task]="selectedTask" (saved)="updateTask($event)" (canceled)="cancelEdition()"/>
+}
+

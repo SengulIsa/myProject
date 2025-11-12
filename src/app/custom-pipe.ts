@@ -3,7 +3,7 @@ import { Pipe,PipeTransform } from "@angular/core";
 @Pipe({name:'mypipeoverstrings',standalone:true})
 export class MyPipe implements PipeTransform{
   transform(value:string) : string{
-    let newValue ="";
+    //let newValue ="";
     for(let i =0; i<value.length; i++){
         if(i % 2 ==0){
           //  newValue += value[i].toUpperCase();

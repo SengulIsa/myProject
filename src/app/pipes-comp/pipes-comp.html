@@ -47,6 +47,47 @@
     }
 }
 <hr>
-<h3>Custom Pipe</h3>
+<h3>Custom Pipe: mypipeoverstrings</h3>
 
 <p>Value : {{text | mypipeoverstrings}}</p>
+
+<hr>
+
+<h1>Custom pipe Demo</h1>
+
+<h2>Telefon Formatlama</h2>
+
+<input type="text" [(ngModel)]="phone">
+<br>
+<p>Çıktı : {{phone | phoneformat}}</p>
+<hr>
+
+<h2>Sansürleme</h2>
+<input type="text" [(ngModel)]="sansur">
+<br>
+<p>Çıktı : {{sansur | sansur}}</p>
+<hr>
+
+<h2>Kdv Hesaplama</h2>
+<input type="number" [(ngModel)]="kdv">
+<br>
+<p>Çıktı : {{kdv | kdvcalculate}} TL</p>
+<hr>
+
+<h2>Metin Kısaltma</h2>
+<input type="text" [(ngModel)]="metin">
+<br>
+<p>Çıktı : {{metin | short}}</p>
+<hr>
+
+<h2>Liste Filtreleme</h2>
+<label>Arama :</label>
+<input type="text" [(ngModel)]="searchText" style="margin-left: 5px;">
+<ul>
+    @for(item of (list | filter:searchText); track item){
+        <li>
+            {{item}}
+        </li>
+    }
+</ul>
+<br>

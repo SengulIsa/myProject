@@ -1,0 +1,13 @@
+<div>
+    <h2>Ürün Düzenleme</h2>
+    <label for="">Ürün adı :</label>
+    <input type="text" [(ngModel)]="product.name"/>
+    
+    
+    <label for="">Fiyat :</label>
+    <input type="number" [(ngModel)]="product.price"/>
+    
+    <button (click)="save()">Kaydet</button>
+    <button (click)="cancel()">İptal</button>
+</div>
+
